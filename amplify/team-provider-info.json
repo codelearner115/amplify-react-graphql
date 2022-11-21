@@ -10,6 +10,14 @@
       "StackName": "amplify-thefamilyapp-staging-10139",
       "StackId": "arn:aws:cloudformation:us-east-2:521359278503:stack/amplify-thefamilyapp-staging-10139/6c5eb580-4e80-11ed-a393-06dae90ac7d2",
       "AmplifyAppId": "d2v03gi703b0fn"
+    },
+    "categories": {
+      "auth": {
+        "thefamilyappe0ce3d9d": {}
+      },
+      "api": {
+        "TheFamilyApp": {}
+      }
     }
   }
 }
