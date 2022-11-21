@@ -1,0 +1,35 @@
+type CurrentInventory @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  price: Float
+  quantity: Int
+  name: String
+  alternative: String
+  measurement: String
+  onHand: Int
+  expiration: String
+}
+
+type IngredientList @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  shopingCartId: String
+  recipeID: ID! @index(name: "byRecipe")
+}
+
+type Recipe @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  recipeName: String
+  servings: String
+  lastCost: String
+  newCost: String
+  IngredientLists: [IngredientList] @hasMany(indexName: "byRecipe", fields: ["id"])
+}
+
+type ShopingCartItem @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  lastPrice: Float
+  newPrice: Float
+  quantity: Int
+  name: String
+  alternative: Int
+  measurement: String
+}
